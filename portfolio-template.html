@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Arial', sans-serif;
+            background-color: #333;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 0.5em;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.5em;
+        }
+
+        section {
+            width: 90%;
+            max-width: 1000px;
+            margin: 2em auto;
+        }
+
+        section img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1em;
+        }
+
+        .item {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .item img {
+            width: calc(50% - 1em);
+        }
+
+        @media (max-width: 640px) {
+            .item img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<h1>My Portfolio</h1>
+
+<p>This is my portfolio website.</p>
+
+<section>
+    <h2>About me</h2>
+    <p>I am a web developer based in Canada.</p>
+</section>
+
+<section>
+    <h2>Projects</h2>
+
+    <div class="item">
+        <img src="project-1.jpg">
+        <img src="project-2.jpg">
+    </div>
+
+    <div class="item">
+        <img src="project-3.jpg">
+        <img src="project-4.jpg">
+    </div>
+</section>
+</body>
+</html>

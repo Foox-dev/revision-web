@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FennixIndi | Projects</title>
+
+  <link rel="shortcut icon" href="assets/theimages/logo.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+
+  <script>
+    function toggle_Popup() {
+      document.getElementById("popup-1").classList.toggle("active");
+    }
+  </script>
+
+  <style>
+    body {
+      background: -webkit-linear-gradient(25deg, #0518ed, #682ad4, #cf3acc);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+
+    }
+  </style>
+
+  <style>
+    .popup .overlay {
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+      display: none;
+    }
+
+    .popup .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: #1F1F1F;
+      width: 450px;
+      hight: 220px;
+      z-index: 2;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .popup .close-btn {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      hight: 30px;
+      color: #ffffff font-size: 25px;
+      font-weight: 600;
+      line-hight: 30px;
+      text-align: center;
+      boarder-radius: 50%;
+    }
+
+    .popup.active .overlay {
+      display: block;
+    }
+
+    .popup.active .content {
+      transition: all 300ms ease-in-out;
+      transform: translate(-50%, -50%) scale(0);
+    }
+  </style>
+
+  <style>
+    /* Style The Dropdown Button */
+    .dropbtn {
+      background-color: #2B2B2B;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #404040;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #525252
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+      background-color: #313131;
+    }
+  </style>
+
+  <style>
+    @font-face {
+      font-family: SPR;
+      src: url('assets/EightBitDragon.ttf');
+    }
+
+    h1 {
+      font-family: SPR
+    }
+  </style>
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+      \
+
+    }
+
+    /* Add a gray background color with some padding */
+    footer {
+      background-color: #181818;
+      padding: 25px;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      /* Set width to 100% */
+      margin: auto;
+      min-height: 200px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+      }
+
+
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="index.html">FennixIndi</a>
+
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="#"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li class="#"><a href="about.html"><span class="glyphicon glyphicon-inbox"></span> About</a></li>
+          <li class="active"><a href="#"><span class="glyphicon glyphicon-globe"></span> Projects</a></li>
+
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script src="app.js"></script>
+
+  <!------------------------------------->
+
+  <style>
+    .dummy-footer {
+      padding: 30px;
+    }
+
+    .body-placeholder {
+      width: 375px;
+      height: 520px;
+      border: 1px solid black;
+      border-radius: 15px;
+      margin: auto;
+      background: white;
+      box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.06)
+    }
+
+    .container {
+      width: 375px;
+      height: 520px;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .container form {
+      width: 100%;
+      border: 0px solid rgb(82, 74, 235);
+      border-radius: 4px;
+    }
+
+    .container form input {
+      border: none;
+      outline: none;
+      box-shadow: none;
+      width: 90%;
+      font-size: 16px;
+      font-weight: 600;
+      float: right;
+    }
+
+    .fa-search {
+      font-size: 28px;
+    }
+
+    .line1 {
+      align: center;
+      padding: 1px;
+    }
+
+    .line2 {
+      align: center;
+      border: 2px solid #000;
+    }
+
+    .container form i {
+      padding-left: 1px;
+    }
+  </style>
+  <div class="dummy-footer"></div>
+  <div class="body-placeholder">
+    <section class="container">
+      <form class="container-form">
+        <i class="fas fa-search"></i>
+        <input type="text" name="" id="search-item" placeholder="Search Projects" class="project-input"
+          onkeyup="search()"></input>
+      </form>
+      <div class="line1"></div>
+      <div class="line2"></div>
+
+      <div class="dummy-footer2"></div>
+
+      <div class="product-container">
+
+        <div class="product-list" id="product-list">
+
+          <a href="games/html-games/pickle-clicker.html">
+            <div class="product">
+              <img src="games/game-art/pickles/Pickle-2.png" alt="">
+              <div class="p-details">
+                <h2><strong>Pickle Clicker</strong></h2>
+                <h3><strong>Free To Play</strong></h3>
+              </div>
+            </div>
+          </a>
+          <a href="games/maze/maze.html">
+            <div class="product">
+              <img src="games/game-art/stormtides_logo.png" alt="">
+              <div class="p-details">
+                <h2><strong>StormTides Byte</strong></h2>
+                <h3><strong>Free To Play </strong></h3>
+              </div>
+            </div>
+          </a>
+          <a href="games/battle/battle.html">
+            <div class="product">
+              <img src="games/game-art/stormtides_logo2.png" alt="">
+              <div class="p-details">
+                <h2><strong>StormTides Unity</strong></h2>
+                <h3><strong>$5.99 USD</strong></h3>
+              </div>
+            </div>
+          </a>
+          <a href="games/imper.html">
+            <div class="product">
+              <img src="products/a1.png" alt="">
+              <div class="p-details">
+                <h2><strong>Imperium</strong></h2>
+                <h3><strong>$9.99 USD</strong></h3>
+              </div>
+            </div>
+          </a>
+          <a href="games/breadq.html">
+            <div class="product">
+              <img src="products/a1.png" alt="">
+              <div class="p-details">
+                <h2><strong>Bread Quest</strong></h2>
+                <h3><strong>$12.50 USD</strong></h3>
+              </div>
+            </div>
+          </a>
+
+          <a href="/downloads/download1.html">
+            <div class="product">
+              <img src="products/a1.png" alt="">
+              <div class="p-details">
+                <h2><strong>SideBar Navigate Template</strong></h2>
+                <h3><strong>Free To Download</strong></h3>
+              </div>
+            </div>
+          </a>
+          <a href="/downloads/download2.html">
+            <div class="product">
+              <img src="products/a1.png" alt="">
+              <div class="p-details">
+                <h2><strong>Basic Portfolio Template</strong></h2>
+                <h3><strong>Free To Download</strong></h3>
+              </div>
+            </div>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+  <style>
+    .section-templates {
+      border: 0.5px solid black;
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    .container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .product .p-details {
+      padding-left: 15px;
+    }
+
+    .product-container {
+      border: 0.5px solid white;
+      border-radius: 15px;
+      background: white;
+      width: 333.8px;
+      height: 450px;
+      padding-top: 5px;
+      overflow-y: scroll;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      padding-bottom: 3px;
+    }
+
+    .product img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 5px;
+
+    }
+
+    .product .p-details h2 {
+      font-size: 18px;
+      color: #1d1d1d;
+
+    }
+
+    .product .p-details h3 {
+      font-size: 15px;
+      color: #1d1d1d;
+
+    }
+
+    .product-list {
+      padding: 8px 0;
+    }
+  </style>
+
+  <!------------------------------------->
+
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/634df1aeb0d6371309ca0c1b/1gfk7g4p5';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
+</body>
+
+</html>

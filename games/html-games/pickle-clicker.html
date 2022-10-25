@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pickle Clicker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=0.9, user-scalable=no" />
+
+  <script src="https://cdn.jsdelivr.net/npm/numbro@2.3.6/dist/numbro.min.js"></script>
+
+
+  <link rel="shortcut icon" href="/games/game-art/pickles/pickle-fav.png" type="image/x-icon">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+
+  <script>
+    var clicker = {
+      pickles: 0,
+      avg: 0,
+      click_pickle: 1,
+      upgrades: {
+        pickle_skills: {
+          amount: 0,
+          cost: 300,
+          gps: 0,
+          unlocked: false,
+          unlockat: 0,
+          name: "Click Multiplier"
+        },
+        pickler_machine: {
+          amount: 0,
+          cost: 100,
+          gps: 0.25,
+          unlocked: false,
+          unlockat: 0,
+          name: "Extra Picklers"
+        },
+        pickler_monkey: {
+          amount: 0,
+          cost: 300,
+          gps: 1,
+          unlocked: false,
+          unlockat: 1,
+          name: "Pickler Monkey"
+        },
+        pickler_plat: {
+          amount: 0,
+          cost: 500,
+          gps: 2,
+          unlocked: false,
+          unlockat: 1,
+          name: "Pickle Plantation"
+        },
+        pickler_factory: {
+          amount: 0,
+          cost: 1500,
+          gps: 3.25,
+          unlocked: false,
+          unlockat: 800,
+          name: "Pickling Factory"
+        },
+        picklers_insomnia: {
+          amount: 0,
+          cost: 3000,
+          gps: 5,
+          unlocked: false,
+          unlockat: 2000,
+          name: "Picklers Insomnia"
+        },
+        pickle_pit: {
+          amount: 0,
+          cost: 5500,
+          gps: 10,
+          unlocked: false,
+          unlockat: 3500,
+          name: "Pickle Pit  "
+        },
+        corrupted_pickle: {
+          amount: 0,
+          cost: 8000,
+          gps: 35,
+          unlocked: false,
+          unlockat: 7000,
+          name: "Corrupted Pickle"
+        },
+        spice_mixer: {
+          amount: 0,
+          cost: 10000,
+          gps: 80,
+          unlocked: false,
+          unlockat: 7500,
+          name: "Spice Mixer"
+        },
+        pickle_empire: {
+          amount: 0,
+          cost: 15500,
+          gps: 150,
+          unlocked: false,
+          unlockat: 12000,
+          name: "Pickle Empire"
+        },
+        glowing_salt: {
+          amount: 0,
+          cost: 20000,
+          gps: 200,
+          unlocked: false,
+          unlockat: 17000,
+          name: "Glowing Salt"
+        },
+        atomic_vinegar: {
+          amount: 0,
+          cost: 32000,
+          gps: 300,
+          unlocked: false,
+          unlockat: 28000,
+          name: "Atomic Vinegar"
+        },
+      },
+      achievements: [{req: "clicker.pickles>=1", gotten: false, title: "A Big Mistake", text: "Play Pickle Clicker."},
+      {req: "clicker.pickles>=1000", gotten: false, title: "Now It Begins...", text: "Get 1000 Pickles."},
+      {req: "clicker.pickles>=5000", gotten: false, title: "Pickle Priest", text: "Get 5000 Pickles"},
+      {req: "clicker.upgrades.picklers_insomnia.amount>=1", gotten: false, title: "Insomniac", text: "Buy Pickle Insomnia."},
+      {req: "clicker.upgrades.corrupted_pickle.amount>=1", gotten: false, title: "No Life", text: "Buy a Corrupted Pickle."},
+      {req: "clicker.upgrades.atomic_vinegar.amount>=1", gotten: false, title: "Atomic Cucumbers", text: "Buy Atomic Vinegar."}]
+    };
+    function pickle_clicked(thing) {
+      var string = numbro(1000).format({thousandSeparated: true});
+      console.log("Pickle Has Been Clicked");
+      if (clicker.upgrades[thing].cost <= clicker.pickles) {
+        if ([thing] == 'pickle_skills') {
+          clicker.pickles -= clicker.upgrades.pickle_skills.cost;
+          clicker.upgrades.pickle_skills.amount++;
+          clicker.upgrades[thing].cost += Math.round(clicker.upgrades[thing].cost * 0.15);
+          clicker.click_pickle++
+          update_upgrades();
+        } else {
+          clicker.pickles -= clicker.upgrades[thing].cost;
+          clicker.avg += clicker.upgrades[thing].gps;
+          clicker.upgrades[thing].amount++;
+          clicker.upgrades[thing].cost += Math.round(clicker.upgrades[thing].cost * 0.15);
+          update_upgrades();
+        }
+      }
+    }
+    function update_upgrades() {
+      document.querySelector("#upgrades").innerHTML = "";
+      document.querySelector("#avg_pickle").innerHTML = clicker.avg + " Pickles Per Second";
+      for (i in clicker.upgrades) {
+        document.querySelector("#upgrades").innerHTML += `<br> <button style="color: #ffffff" onclick="pickle_clicked('${i}')">${clicker.upgrades[i].name}</button> <br>You have ${clicker.upgrades[i].amount} | Cost: ${clicker.upgrades[i].cost}<br>`;
+      }
+    }
+    function updatecount() {
+      console.log("F");
+      update_upgrades();
+      setInterval(() => {
+        for (i in clicker.achievements) {
+          var x = new Function('return ' + clicker.achievements[i].req);
+          if (x() && !clicker.achievements[i].gotten) {
+            clicker.achievements[i].gotten = true;
+            document.querySelector("#achievements").innerHTML += `<br>ACHIEVEMENT UNLOCKED:<br>${clicker.achievements[i].title}<br>${clicker.achievements[i].text}<br>`;
+          }
+        }
+        for (i in clicker.upgrades) {
+          clicker.pickles += clicker.upgrades[i].amount * clicker.upgrades[i].gps / 20;
+        }
+        document.querySelector("#pickles").innerHTML = "You have " + String(clicker.pickles).split(".")[0] + " Pickles";
+      }, 50);
+    }
+
+  </script>
+
+
+
+  <style>
+    body {
+      background-color: #1D2419;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+  </style>
+
+  <style>
+    .image img {
+      transition: all .1s ease-in-out;
+    }
+
+    .image img:hover {
+      transform: scale(1.01);
+    }
+
+    .image img:active {
+      transform: scale(0.99);
+    }
+
+    .upgrades button {
+      background: #242424;
+      color: #ffffff;
+      border-radius: 10%;
+    }
+
+    .upgrades2 button {
+      background: #242424;
+      color: #ffffff;
+      border-radius: 10%;
+    }
+
+    .numbers {
+      thousandSeparated: true
+    }
+
+    html::-webkit-scrollbar {
+      width: 0px;
+    }
+  </style>
+
+
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color with some padding */
+    footer {
+      background-color: #181818;
+      padding: 25px;
+    }
+
+    .carousel-inner img {
+      width: 100%;
+      /* Set width to 100% */
+      margin: auto;
+      min-height: 200px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none;
+      }
+
+    }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+
+        <a class="navbar-brand" href="index.html">FennixIndi</a>
+
+      </div>
+      <div class=" collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="#"><a href="/index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+          <li class="#"><a href="/about.html"><span class="glyphicon glyphicon-inbox"></span> About</a></li>
+          <li><a href="/projects.html"><span class="glyphicon glyphicon-globe"></span> Projects</a></li>
+          <li><a href="/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <body onload="updatecount()">
+    <div align="center">
+      <h1 style="color: #ffffff" ;>Pickle Clicker</h1>
+
+  </body>
+
+  <style>
+    .button {
+      background-color: Transparent;
+      background-repeat: no-repeat;
+      border: none;
+      cursor: pointer;
+      overflow: hidden;
+      padding: 15px 32px;
+    }
+  </style>
+  <h2 id="avg_pickle" style="color: #ffffff" ;>0 Pickles Per Second</h2>
+  <h3 id="pickles" style="color: #ffffff" ;>You have 0 Pickles</h3>
+  <a class="image" onclick="clicker.pickles += clicker.click_pickle"><img src="/games/game-art/pickles/pickle.png"
+      class="img-responsive" style="width:30%"></a>
+
+  <center>
+    <br>
+    <h3 style="color: #ffffff">Auto Upgrades</h3>
+    <div id="upgrades" class="upgrades" style="color: #ffffff" align="center">
+    </div>
+    </left>
+
+    <br>
+
+    <div id="achievements" align="center" style="width: 400px; height: 500px; color: #ffffff; top; 100%"></div>
+  </center>
+
+</body>
+
+</html>
