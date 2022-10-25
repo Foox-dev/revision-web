@@ -11,15 +11,15 @@ app.get('/', (req, res)=> {
   res.sendFile(__dirname + '/public/index.html')
 });
 
-app.get('/phyton', (req, res)=> {
+app.get('public/phyton', (req, res)=> {
   res.sendFile(__dirname + '/public/phyton.html')
 });
 
-app.get('/javascript', (req, res)=> {
+app.get('public/javascript', (req, res)=> {
   res.sendFile(__dirname + '/public/javascript.html')
 });
 
-app.get('/swift', (req, res)=> {
+app.get('public/swift', (req, res)=> {
   res.sendFile(__dirname + '/public/swift.html')
 });
 
