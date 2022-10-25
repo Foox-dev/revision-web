@@ -1,0 +1,194 @@
+@import "scss/typography";
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#container {
+	flex: 1;
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 5%;
+    max-width: 1200px;
+}
+
+.flex {
+    display: flex;
+
+    &.center {
+        justify-content: center;
+    }
+
+    &.v-center {
+        align-items: center;
+    }
+}
+
+section {
+	padding: 24px 0;
+}
+
+#container-skills {
+    text-align: center;
+
+    .item {
+        margin: 0 16px;
+    }
+
+	.container-skill-icon {
+        img {
+			width: 48px;
+	        height: 48px;
+			vertical-align: middle;
+		}
+    }
+
+    .container-skill-title {
+        flex: 1;
+        padding-left: 16px;
+        text-align: left;
+
+		.title {
+	        margin-bottom: 8px;
+	        text-align: center;
+	        font-weight: bold;
+	    }
+
+        .value {
+            float: right;
+            display: inline-block;
+            text-align: right;
+        }
+    }
+
+	.progress-bar {
+		margin-top: 8px;
+		width: 200px;
+		height: 17px;
+		background-color: #000;
+		border-radius: 4px;
+		overflow: hidden;
+
+		&::-webkit-progress-bar {
+			background-color: #F1F1F1;
+			box-shadow: 0 1px 6px rgba(0, 0, 0, .35) inset;
+		}
+
+		&::-webkit-progress-value {
+			background-color: #4CAF50;
+		    background: linear-gradient(to bottom, #FF9800 0%, #FFE0B2 50%, #FF9800 100%);
+		}
+	}
+}
+
+#container-actions, #container-location {
+
+
+	.item {
+		width: 168px;
+		margin: 0 16px;
+		padding: 12px 12px;
+		text-align: center;
+		border: 1px solid #000;
+		border-radius: 6px;
+		cursor: pointer;
+		user-select: none;
+
+		&.active {
+			background-color: #FFE0B2;
+			border-color: #FF9800;
+		}
+
+		.details {
+			color: #888;
+			font-size: .875em;
+		}
+	}
+}
+
+#container-inventory, #container-crafting {
+
+
+	ul {
+		list-style: none;
+
+		li {
+			display: flex;
+
+			.item {
+				flex: 1;
+			}
+
+			.actions span {
+				display: inline-block;
+				padding: .25em .75em;
+				cursor: pointer;
+
+				&.use {
+					color: #3F51B5;
+
+					&:hover {
+						background-color: #3F51B5;
+						color: #FFF;
+						border-radius: 6px;
+					}
+				}
+
+				&.sell {
+					color: #4CAF50;
+
+					&:hover {
+						background-color: #4CAF50;
+						color: #FFF;
+						border-radius: 6px;
+					}
+				}
+
+				&.drop {
+					color: #F44336;
+
+					&:hover {
+						background-color: #F44336;
+						color: #FFF;
+						border-radius: 6px;
+					}
+				}
+
+				&.craft {
+					color: #2196F3;
+
+					&:hover {
+						background-color: #2196F3;
+						color: #FFF;
+						border-radius: 6px;
+					}
+				}
+			}
+		}
+	}
+}
+
+#container-crafting {
+	li.unavailable {
+		text-decoration: line-through;
+
+		.item .unavailable {
+			color: #F00;
+		}
+
+		.button.craft {
+			color: #AAA;
+			cursor: not-allowed;
+
+			&:hover {
+				background-color: #AAA;
+			}
+		}
+	}
+}
+
+@import "scss/footer";
