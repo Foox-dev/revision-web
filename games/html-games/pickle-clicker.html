@@ -250,33 +250,93 @@
     }
     }
   </style>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navigation {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #313131;
+  opacity: 0.3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.navigation a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  opacity: 100;
+  display: block;
+  transition: 0.3s;
+}
+
+.navigation a:hover {
+  color: #f1f1f1;
+}
+
+.navigation .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #2D2D2D;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #3E3E3E;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+  </style>
+
 </head>
 
 <body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <a class="navbar-brand" href="index.html">FennixIndi</a>
-
-      </div>
-      <div class=" collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="#"><a href="/index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-          <li class="#"><a href="/about.html"><span class="glyphicon glyphicon-inbox"></span> About</a></li>
-          <li><a href="/projects.html"><span class="glyphicon glyphicon-globe"></span> Projects</a></li>
-          <li><a href="/login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      </div>
+    <div id="myNavigation" class="navigation" style="opacity: 100;">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="/home.html"><span class="glyphicon glyphicon-home"></span></span> Home</a>
+      <a href="a/bout.html"><span class="glyphicon glyphicon-inbox"></span>About</a>
+      <a href="/projects.html"><span class="glyphicon glyphicon-globe"></span>Products</a>
+      <a href="/youtube.com"><br>Join Our Discord!</a>
     </div>
-  </nav>
+    
+    <div id="main">
+     
+      <button class="openbtn" onclick="openNav()">☰ Navigation</button>  
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("myNavigation").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNavigation").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
 
+<body>
 
   <body onload="updatecount()">
     <div align="center">

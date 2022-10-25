@@ -50,63 +50,111 @@
     }
     }
   </style>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navigation {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #313131;
+  opacity: 0.3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.navigation a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  opacity: 100;
+  display: block;
+  transition: 0.3s;
+}
+
+.navigation a:hover {
+  color: #f1f1f1;
+}
+
+.navigation .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #2D2D2D;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #3E3E3E;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+  </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <a class="navbar-brand" href="index.html">FennixIndi</a>
-
-      </div>
-      <div class=" collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="#"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-          <li class="active"><a href="#"><span class="glyphicon glyphicon-inbox"></span> About</a></li>
-          <li><a href="projects.html"><span class="glyphicon glyphicon-globe"></span> Projects</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      </div>
+  <body>
+  
+    <div id="myNavigation" class="navigation" style="opacity: 100;">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="home.html"><span class="glyphicon glyphicon-home"></span></span> Home</a>
+      <a href="about.html"><span class="glyphicon glyphicon-inbox"></span>About</a>
+      <a href="projects.html"><span class="glyphicon glyphicon-globe"></span>Products</a>
+      <a href="youtube.com"><br>Join Our Discord!</a>
     </div>
-  </nav>
+    
+    <div id="main">
+     
+      <button class="openbtn" onclick="openNav()">☰ Navigation</button>  
+      <center>
+        <img src="assets/revision-banner.png" class="img-responsive" style="width:50%" alt="banner">
+      </center>
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("myNavigation").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNavigation").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
+    </body>
 
   <h2>
     <center>
-      <img src="assets/theimages/banner-no-logo.png" class="img-responsive" style="width:35%" alt="banner">
+
     </center>
-    <center class="semi-transparent-box style=" color: #A4A4A4">What is FennixIndi?</center>
+    <center class="semi-transparent-box style=" color: #A4A4A4">What is Revision Studios?</center>
   </h2>
-  <div style="height:1%;width:100%;overflow;border:0px solid #000000;" </div>
+  <div style="height:1%;width:100%;overflow;border:0px solid #000000;">
     <div style="height:570px;width:100%;overflow;border:0px solid #000000;">
       <h4>
         <p style="color: #ffffff;">
 
 
           <center id="padding">
-            <div class="semi-transparent-box"><h3>FennixIndi is a small development studio that
-              creates games,
-              websites, and
-              assets. We were established
-              on March 13, 2022, and we are a team of experienced developers. We have a passion for creating
-              high-quality, innovative, and fun projects.Our mission is to create unique, memorable experiences for our
-              players and customers. We strive to create a positive impact on the gaming industry and the world. We are
-              constantly learning and expanding our skills so that we can provide the best possible products and
-              services to our clients.We are based in the United States, but we have a global reach with our products
-              and services. We are always looking for new opportunities to grow and expand our business. If you are
-              interested in working with us, please contact us. We would be more than happy to discuss any potential
-              projects or collaborations with you.Thank you for choosing us as your source for entertainment! We promise
-              to be interactive with our clients as much as possible. We believe that this interaction allows our
-              clients to get to know the people who are making their games and provides us with essential feedback that
-              helps us improve our products. Our games are designed to be fun and challenging, while also providing an
-              opportunity for our players to learn and grow. We are always striving to create new and innovative
-              gameplay experiences that will entertain and engage our players for years to come.</h3></div>
+            <div class="semi-transparent-box"><h3></h3></div>
             
           </center>
           <style>
@@ -135,7 +183,7 @@ var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
-s1.src='https://embed.tawk.to/634df1aeb0d6371309ca0c1b/1gfk7g4p5';
+s1.src='';
 s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);

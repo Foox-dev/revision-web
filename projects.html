@@ -79,6 +79,7 @@
       transition: all 300ms ease-in-out;
       transform: translate(-50%, -50%) scale(0);
     }
+    
   </style>
 
   <style>
@@ -145,65 +146,91 @@
 
   <style>
     /* Remove the navbar's default margin-bottom and rounded borders */
-    .navbar {
-      margin-bottom: 0;
-      border-radius: 0;
-      \
+    .navigation {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #313131;
+  opacity: 0.3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
 
-    }
+.navigation a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  opacity: 100;
+  display: block;
+  transition: 0.3s;
+}
 
-    /* Add a gray background color with some padding */
-    footer {
-      background-color: #181818;
-      padding: 25px;
-    }
+.navigation a:hover {
+  color: #f1f1f1;
+}
 
-    .carousel-inner img {
-      width: 100%;
-      /* Set width to 100% */
-      margin: auto;
-      min-height: 200px;
-    }
+.navigation .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
 
-    /* Hide the carousel text when the screen is less than 600 pixels wide */
-    @media (max-width: 600px) {
-      .carousel-caption {
-        display: none;
-      }
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #2D2D2D;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
 
+.openbtn:hover {
+  background-color: #3E3E3E;
+}
 
-    }
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
   </style>
 </head>
 
 <body>
-
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <a class="navbar-brand" href="index.html">FennixIndi</a>
-
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="#"><a href="index.html"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-          <li class="#"><a href="about.html"><span class="glyphicon glyphicon-inbox"></span> About</a></li>
-          <li class="active"><a href="#"><span class="glyphicon glyphicon-globe"></span> Projects</a></li>
-
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <script src="app.js"></script>
-
+  </head>
+  <body>
+  
+  <div id="myNavigation" class="navigation" style="opacity: 100;">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="home.html"><span class="glyphicon glyphicon-home"></span></span> Home</a>
+    <a href="about.html"><span class="glyphicon glyphicon-inbox"></span>About</a>
+    <a href="projects.html"><span class="glyphicon glyphicon-globe"></span>Products</a>
+    <a href="youtube.com"><br>Join Our Discord!</a>
+  </div>
+  
+  <div id="main">
+   
+    <button class="openbtn" onclick="openNav()">☰ Navigation</button>  
+  </div>
+  
+  <script>
+  function openNav() {
+    document.getElementById("myNavigation").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  function closeNav() {
+    document.getElementById("myNavigation").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+  }
+  </script>
+  </body>
   <!------------------------------------->
 
   <style>
@@ -214,10 +241,10 @@
     .body-placeholder {
       width: 375px;
       height: 520px;
-      border: 1px solid black;
+      border: 1px solid #3E3E3E;
       border-radius: 15px;
       margin: auto;
-      background: white;
+      background: #3E3E3E;
       box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.06)
     }
 
@@ -225,12 +252,14 @@
       width: 375px;
       height: 520px;
       border-radius: 15px;
+      border-color: #3E3E3E;
       padding: 20px;
     }
 
     .container form {
       width: 100%;
-      border: 0px solid rgb(82, 74, 235);
+      border: 0px solid;
+      border-color: #3E3E3E;
       border-radius: 4px;
     }
 
@@ -255,12 +284,13 @@
 
     .line2 {
       align: center;
-      border: 2px solid #000;
+      border: 2px solid #3E3E3E;
     }
 
     .container form i {
       padding-left: 1px;
     }
+    
   </style>
   <div class="dummy-footer"></div>
   <div class="body-placeholder">
@@ -268,14 +298,14 @@
       <form class="container-form">
         <i class="fas fa-search"></i>
         <input type="text" name="" id="search-item" placeholder="Search Projects" class="project-input"
-          onkeyup="search()"></input>
+          onkeyup="search()" style="background: #3E3E3E;"></input>
       </form>
       <div class="line1"></div>
       <div class="line2"></div>
 
       <div class="dummy-footer2"></div>
 
-      <div class="product-container">
+      <div class="product-container" style="background: #3E3E3E; border-color: #3E3E3E;">
 
         <div class="product-list" id="product-list">
 
@@ -284,62 +314,25 @@
               <img src="games/game-art/pickles/Pickle-2.png" alt="">
               <div class="p-details">
                 <h2><strong>Pickle Clicker</strong></h2>
-                <h3><strong>Free To Play</strong></h3>
+                <h3><strong>Free On Web</strong></h3>
               </div>
             </div>
           </a>
           <a href="games/maze/maze.html">
             <div class="product">
-              <img src="games/game-art/stormtides_logo.png" alt="">
+              <img src="products/maze-race.png" alt="">
               <div class="p-details">
-                <h2><strong>StormTides Byte</strong></h2>
-                <h3><strong>Free To Play </strong></h3>
+                <h2><strong>Maze Race</strong></h2>
+                <h3><strong>Free On Web</strong></h3>
               </div>
             </div>
           </a>
           <a href="games/battle/battle.html">
             <div class="product">
-              <img src="games/game-art/stormtides_logo2.png" alt="">
+              <img src="products/swift-arena.png" alt="">
               <div class="p-details">
-                <h2><strong>StormTides Unity</strong></h2>
-                <h3><strong>$5.99 USD</strong></h3>
-              </div>
-            </div>
-          </a>
-          <a href="games/imper.html">
-            <div class="product">
-              <img src="products/a1.png" alt="">
-              <div class="p-details">
-                <h2><strong>Imperium</strong></h2>
-                <h3><strong>$9.99 USD</strong></h3>
-              </div>
-            </div>
-          </a>
-          <a href="games/breadq.html">
-            <div class="product">
-              <img src="products/a1.png" alt="">
-              <div class="p-details">
-                <h2><strong>Bread Quest</strong></h2>
-                <h3><strong>$12.50 USD</strong></h3>
-              </div>
-            </div>
-          </a>
-
-          <a href="/downloads/download1.html">
-            <div class="product">
-              <img src="products/a1.png" alt="">
-              <div class="p-details">
-                <h2><strong>SideBar Navigate Template</strong></h2>
-                <h3><strong>Free To Download</strong></h3>
-              </div>
-            </div>
-          </a>
-          <a href="/downloads/download2.html">
-            <div class="product">
-              <img src="products/a1.png" alt="">
-              <div class="p-details">
-                <h2><strong>Basic Portfolio Template</strong></h2>
-                <h3><strong>Free To Download</strong></h3>
+                <h2><strong>Swift Arena</strong></h2>
+                <h3><strong>Free On Web</strong></h3>
               </div>
             </div>
           </a>
@@ -359,6 +352,12 @@
     }
 
     .container::-webkit-scrollbar {
+      display: none;
+      width: 0px;
+    }
+
+    html::-webkit-scrollbar {
+      width: 0px;
       display: none;
     }
 
@@ -393,19 +392,20 @@
 
     .product .p-details h2 {
       font-size: 18px;
-      color: #1d1d1d;
+      color: #B9B9B9;
 
     }
 
     .product .p-details h3 {
       font-size: 15px;
-      color: #1d1d1d;
+      color: #B9B9B9;
 
     }
 
     .product-list {
       padding: 8px 0;
     }
+    
   </style>
 
   <!------------------------------------->
@@ -416,7 +416,7 @@
     (function () {
       var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
-      s1.src = 'https://embed.tawk.to/634df1aeb0d6371309ca0c1b/1gfk7g4p5';
+      s1.src = '';
       s1.charset = 'UTF-8';
       s1.setAttribute('crossorigin', '*');
       s0.parentNode.insertBefore(s1, s0);

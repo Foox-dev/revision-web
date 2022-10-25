@@ -1,0 +1,32 @@
+{
+  "name": "ChatRoom-SocketIO",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js --exec babel-node -e js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vanals/ChatRoom-SocketIO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vanals/ChatRoom-SocketIO/issues"
+  },
+  "homepage": "https://github.com/Vanals/ChatRoom-SocketIO#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "http-server": "^0.11.1",
+    "nodemon": "^1.14.12",
+    "socket.io": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-0": "^6.24.1"
+  }
+}
