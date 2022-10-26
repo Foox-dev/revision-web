@@ -121,3 +121,7 @@ function addInventoryItem(id, amountMin, amountMax, chance) {
 
 	return true;
 }
+
+function addGoldSell(id) {
+	playerInventory.set(id, itemAmount + 10);
+}

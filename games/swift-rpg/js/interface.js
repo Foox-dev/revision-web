@@ -249,7 +249,7 @@ function setClickListeners() {
 			id = e.target.getAttribute('data-inventory-id');
 
 			// I'm not implementing this feature yet, because there's no use for it now.
-			// console.log('Requested', action, 'action for the', getItemName(id), '(' + id + ') item.');
+			console.log('Requested', action, 'action for the', getItemName(id), '(' + id + ') item.');
 		}
 	});
 
