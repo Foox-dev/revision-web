@@ -70,7 +70,7 @@ let actionsList = [
 		],
 		itemsRewards: [
 			{ id: 6, amountMin: 1, amountMax: 4, chance: 100 },
-			{ id: 7, amountMin: 1, amountMax: 6, chance: 10 }
+			{ id: 7, amountMin: 1, amountMax: 6, chance: 25 }
 		]
 	},
 	{

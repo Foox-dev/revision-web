@@ -48,7 +48,7 @@ var craftingList = [
 		]
 	},
 	{
-		id: 0,
+		id: 2,
 		item: 14,
 		amount: 1,
 		level: 8,
