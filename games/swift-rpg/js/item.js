@@ -12,7 +12,10 @@ let itemsList = [
 	{ id: 8, name: 'Copper dagger' },
 	{ id: 9, name: 'Hammer' },
 	{ id: 10, name: 'Stone sword' },
-	{ id: 11, name: 'Corn' }
+	{ id: 11, name: 'Corn' },
+	{ id: 12, name: 'XenoGolem book III' },
+	{ id: 13, name: 'Oxygen' },
+	{ id: 14, name: 'Bottle o` air '}
 ];
 
 function getItemName(id) {

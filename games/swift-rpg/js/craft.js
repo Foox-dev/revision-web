@@ -27,9 +27,9 @@ var craftingList = [
 	{
 		id: 0,
 		item: 0,
-		amount: 1,
+		amount: 25,
 		level: 3,
-		experience: 15,
+		experience: 30,
 		requiredItems: [
 			[4, 5],
 			[3, 5],
@@ -39,14 +39,25 @@ var craftingList = [
 	{
 		id: 0,
 		item: 11,
-		amount: 1,
+		amount: 3,
 		level: 5,
-		experience: 15,
+		experience: 75,
 		requiredItems: [
 			[9, 5],
 			[4, 25]
 		]
-	}
+	},
+	{
+		id: 0,
+		item: 14,
+		amount: 1,
+		level: 8,
+		experience: 150,
+		requiredItems: [
+			[13, 3],
+			[4, 100]
+		]
+	},
 ];
 
 // Get available crafting options based on player's crafting level

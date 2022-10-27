@@ -46,7 +46,8 @@ let actionsList = [
 		],
 		itemsRewards: [
 			{ id: 3, amountMin: 1, amountMax: 1, chance: 100 },
-			{ id: 4, amountMin: 5, amountMax: 15, chance: 100 }
+			{ id: 4, amountMin: 5, amountMax: 15, chance: 100 },
+			{ id: 14, amountMin: 1, amountMax: 1, chance: 1 }
 		]
 	},
 	{
@@ -57,7 +58,7 @@ let actionsList = [
 			{ id: 1, amount: 3 }
 		],
 		itemsRewards: [
-			{ id: 5, amountMin: 1, amountMax: 3, chance: 100 }
+			{ id: 5, amountMin: 1, amountMax: 4, chance: 100 }
 		]
 	},
 	{
@@ -68,8 +69,21 @@ let actionsList = [
 			{ id: 2, amount: 1 }
 		],
 		itemsRewards: [
-			{ id: 6, amountMin: 1, amountMax: 2, chance: 100 },
-			{ id: 7, amountMin: 1, amountMax: 3, chance: 10 }
+			{ id: 6, amountMin: 1, amountMax: 4, chance: 100 },
+			{ id: 7, amountMin: 1, amountMax: 6, chance: 10 }
+		]
+	},
+	{
+		id: 4,
+		title: 'Take a step',
+		time: 5,
+		experienceRewards: [
+			{ id: 3, amount: 1 }
+		],
+		itemsRewards: [
+			{ id: 0, amountMin: 1, amountMax: 5, chance: 100 },
+			{ id: 5, amountMin: 1, amountMax: 3, chance: 50 },
+			{ id: 13, amountMin: 1, amountMax: 1, chance: 5 }
 		]
 	},
 ];
