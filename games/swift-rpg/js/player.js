@@ -122,6 +122,14 @@ function addInventoryItem(id, amountMin, amountMax, chance) {
 	return true;
 }
 
-function addGoldSell(id) {
-	playerInventory.set(id, itemAmount + 10);
+function sellItem(id, gold) {
+	const itemAmount = playerInventory.get(id);
+	const goldAmountt = playerInventory.get(0);
+
+	if (id == 1 && playerInventory.get(id) >= 1) { 
+		playerInventory.set(0, goldAmountt + gold);
+		playerInventory.set(1, itemAmount + -1);
+	} else {
+		console.log('g');
+	}
 }

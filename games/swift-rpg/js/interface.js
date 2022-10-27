@@ -250,6 +250,17 @@ function setClickListeners() {
 
 			// I'm not implementing this feature yet, because there's no use for it now.
 			console.log('Requested', action, 'action for the', getItemName(id), '(' + id + ') item.');
+			if (action == "sell") {
+			}
+
+			// Refresh skills list values
+			refreshSkillList();
+
+			// Refresh inventory list
+			refreshInventoryList();
+
+			// Refresh crafting list
+			refreshCraftingList();
 		}
 	});
 

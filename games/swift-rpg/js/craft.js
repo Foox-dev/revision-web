@@ -19,9 +19,32 @@ var craftingList = [
 		level: 2,
 		experience: 15,
 		requiredItems: [
-			[0, 10],
+			[3, 10],
 			[5, 25],
 			[6, 10]
+		]
+	},
+	{
+		id: 0,
+		item: 0,
+		amount: 1,
+		level: 3,
+		experience: 15,
+		requiredItems: [
+			[4, 5],
+			[3, 5],
+			[7, 5]
+		]
+	},
+	{
+		id: 0,
+		item: 11,
+		amount: 1,
+		level: 5,
+		experience: 15,
+		requiredItems: [
+			[9, 5],
+			[4, 25]
 		]
 	}
 ];

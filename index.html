@@ -4,34 +4,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; URL=home.html" />
-  <title>FennixIndi | Home</title>
+  <title>Revision Studios</title>
 
   <link rel="shortcut icon" href="assets/theimages/logo.png" type="image/x-icon">
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.2/socket.io.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.14.7/vconsole.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/numbro/2.0.5/numbro.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/numbro/2.0.5/numbro.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <style>
     body {
-      background: -webkit-linear-gradient(25deg, #0518ed, #682ad4, #cf3acc);
+      background: -webkit-linear-gradient(25deg, #5E60CE, #4EA8DE, #72EFDD);
     }
   </style>
 
   <style>
-    @font-face {
-      font-family: SPR;
-      src: url('assets/EightBitDragon.ttf');
-    }
 
     h1 {
-      font-family: SPR
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h2 {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h3 {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    h4 {
+      font-family: Arial, Helvetica, sans-serif;
     }
   </style>
 
@@ -62,112 +60,113 @@
       }
     }
   </style>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navigation {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #313131;
+  opacity: 0.3;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.navigation a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #818181;
+  opacity: 100;
+  display: block;
+  transition: 0.3s;
+}
+
+.navigation a:hover {
+  color: #f1f1f1;
+}
+
+.navigation .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #2D2D2D;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #3E3E3E;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+  </style>
 </head>
 
 <body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <a class="navbar-brand" href="#">FennixIndi</a>
-
-      </div>
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-          <li><a href="about.html"><span class="glyphicon glyphicon-inbox"></span> About</a></li>
-          <li><a href="projects.html"><span class="glyphicon glyphicon-globe"></span> Projects</a></li>
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-
-        </ul>
-      </div>
+  <body>
+    <div id="myNavigation" class="navigation" style="opacity: 100;">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="home.html"><span class="glyphicon glyphicon-home"></span></span> Home</a>
+      <a href="about.html"><span class="glyphicon glyphicon-inbox"></span>About</a>
+      <a href="projects.html"><span class="glyphicon glyphicon-globe"></span>Products</a>
+      <a href="youtube.com"><br>Join Our Discord!</a>
     </div>
-  </nav>
+    
+    <div id="main">
+     
+      <button class="openbtn" onclick="openNav()">☰ Navigation</button>  
+    </div>
+    
+    <script>
+    function openNav() {
+      document.getElementById("myNavigation").style.width = "250px";
+      document.getElementById("main").style.marginLeft = "250px";
+    }
+    
+    function closeNav() {
+      document.getElementById("myNavigation").style.width = "0";
+      document.getElementById("main").style.marginLeft= "0";
+    }
+    </script>
+    </body>
 
-  <center>
-    <img src="assets/theimages/banner-no-logo.png" class="img-responsive" style="width:35%" alt="banner">
-  </center>
-
-  <div class="container" style="color: #000000">
-    <div class="row">
-      <div class="col-sm-4">
-        <div class="panel panel-primary">
-          <div class="panel-heading">DISCORD SERVER</div>
-          <div><a href="https://www.discord.gg/bXgxSGwGta"><img src="assets/theimages/zdiscord.jpg"
-                class="img-responsive" style="width:100%" alt="discord"></div>
-          </a>
+    <div class="container text-center">
+      <bold>
+        <center><img src="banners/ft-games.png" class="img-responsive" style="width:80%" alt=""><br></center>
+      </bold>
+      <div class="row">
+        <div class="col-sm-4">
+          <a href="games/html-games/pickle-clicker.html" target="_blank"><img src="products/pickle-clicker.gif" class="img-responsive" style="width:100%" alt=""></a>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="panel panel-danger">
-          <div class="panel-heading">YOUTUBE CHANNEL</div>
-          <div><a href="https://www.youtube.com/channel/UCEDVY9F235ofm3Vl54mrZjQ"><img
-                src="assets/theimages/zyoutube.jpg" class="img-responsive" style="width:100%" alt="discord"></div>
-          </a>
+        <div class="col-sm-4">
+          <a href="games/maze/maze.html" target="_blank"><img src="products/maze-race.gif" class="img-responsive" style="width:100%" alt=""></a>
         </div>
-      </div>
-      <div class="col-sm-4">
-        <div class="panel panel-success">
-          <div class="panel-heading">TWITTER PAGE</div>
-          <div><a href="https://twitter.com/fennixindi_dev"><img src="assets/theimages/ztwitter.jpg"
-                class="img-responsive" style="width:100%" alt="discord"></div>
-          </a>
+        <div class="col-sm-4">
+        <a href="games/swift-rpg/index.html" target="_blank"><img src="products/swift-rpg.gif" class="img-responsive" style="width:100%" alt=""></a>
+        </div>
+        <div class="col-sm-4">
         </div>
       </div>
     </div>
+    </div><br>
   </div><br>
-
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="assets/theimages/studio.jpeg" alt="">
-        <div class="carousel-caption">
-          <h3>Game Development</h3>
-          <p>FennixIndi Studios</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="assets/theimages/Webhtml.jpeg" alt="">
-        <div class="carousel-caption">
-          <h3>Website Creation</h3>
-          <p>FennixIndi WebEST</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="assets/theimages/modeling.jpeg" alt="">
-        <div class="carousel-caption">
-          <h3>3D Modeling Assets</h3>
-          <p>FennixIndi Reworks</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
 
   <div class="container text-center">
     <h3 style="color: #ffffff;">What we're working on?</h3><br>
@@ -193,6 +192,20 @@
     }
   </style>
 
+  <!--Start of Tawk.to Script-->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = '';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+  <!--End of Tawk.to Script-->
+
   <footer>
     <strong>
       <a href="TermsOfService.html">
@@ -200,8 +213,6 @@
       </a>
     </strong>
   </footer>
-
-
 
 </body>
 
