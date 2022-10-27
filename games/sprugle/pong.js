@@ -9,6 +9,7 @@ const BACKGROUND_COLOUR = "#000000";
 const PLAYER_COLOUR = "#FFFFFF";
 const COMPUTER_COLOUR = "#FF0000"
 const BALL_COLOUR = "#FFFFFF";
+SCORE = 0;
 
 // Get the middle y-value to draw the paddle using the relationship between
 // the height of the canvas and the height of the paddle
@@ -92,6 +93,7 @@ Ball.prototype.update = function(paddle1, paddle2) {
     this.y = GAME_HEIGHT/2;
     paddle1.y = MIDDLE_Y;
     paddle2.y = MIDDLE_Y;
+    SCORE++;
   }
 
   if (top_x < 300) {
