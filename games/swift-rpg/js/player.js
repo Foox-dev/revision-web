@@ -47,7 +47,7 @@ let actionsList = [
 		itemsRewards: [
 			{ id: 3, amountMin: 1, amountMax: 1, chance: 100 },
 			{ id: 4, amountMin: 5, amountMax: 15, chance: 100 },
-			{ id: 14, amountMin: 1, amountMax: 1, chance: 1 }
+			{ id: 12, amountMin: 1, amountMax: 1, chance: 1 }
 		]
 	},
 	{
